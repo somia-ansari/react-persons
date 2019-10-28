@@ -6,15 +6,17 @@ import { Card } from 'react-bootstrap'
 import PersonsEdit from './PersonsEdit'
 
 export default function Person(props) {
+
   return (
     <Card style={{ width: '18rem' }}>
       {props.person.isEditMode ?
         <PersonsEdit person={props.person} /> :
-        <PersonsInfo person={props.person} />}
+        <PersonsInfo person={props.person} onClickEdit={props.callEnableEdit} />}
     </Card>
   )
 }
 
 Person.propTypes = {
-  person: PropType.object
+  person: PropType.object,
+  callEnableEdit: PropType.func
 }

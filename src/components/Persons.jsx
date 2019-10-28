@@ -15,7 +15,7 @@ export default function Persons() {
       "name": "Dua",
       "age": "2",
       "description": "Happiness officer",
-      "isEditMode": true
+      "isEditMode": false
 
 
     },
@@ -23,17 +23,21 @@ export default function Persons() {
       "name": "Aliza",
       "age": "5",
       "description": "Comedian at youtube",
-      "isEditMode": true
+      "isEditMode": false
 
 
     }
-  ]
+  ],
+    enableEdit = () => {
+      alert('Hello World!!')
+    }
+
   return (
     <div className="Persons">
 
       <h1>Persons</h1>
       {
-        personsData.map(person => <Person person={person} />)
+        personsData.map(person => <Person person={person} callEnableEdit={enableEdit} />)
       }
 
     </div>
