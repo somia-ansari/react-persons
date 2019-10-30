@@ -14,7 +14,7 @@ export default function PersonsEdit(props) {
         Edit Person
       </Card.Title>
       <Card.Text>
-        <input value={props.person.name} />
+        <input value={props.person.name} onChange={props.changeName} />
         <input type="number" value={props.person.age} />
         <textarea>{props.person.description}</textarea>
       </Card.Text>
@@ -22,7 +22,7 @@ export default function PersonsEdit(props) {
         <Button variant="light">
           <FontAwesomeIcon className="text-info" icon={faCheck} />
         </Button>
-        <Button variant="light">
+        <Button variant="light" onClick={props.callDiableEdit}>
           <FontAwesomeIcon className="text-danger" icon={faTimes} />
         </Button>
       </ButtonGroup>
@@ -31,5 +31,8 @@ export default function PersonsEdit(props) {
 }
 
 PersonsEdit.propTypes = {
-  person: PropType.object
+  person: PropType.object,
+  onClickEdit: PropType.object,
+  callDiableEdit: PropType.object,
+  changeName: PropType.func
 }
